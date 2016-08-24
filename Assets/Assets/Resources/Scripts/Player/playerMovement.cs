@@ -119,6 +119,7 @@ public class playerMovement : MonoBehaviour {
     }
  
     void Update () {
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         //If the run button is set to toggle, then switch between walk/run speed//
         if (toggleRun && grounded && Input.GetButtonDown("Run"))
             speed = (speed == walkSpeed? runSpeed : walkSpeed);
